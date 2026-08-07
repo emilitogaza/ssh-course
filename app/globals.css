@@ -4,17 +4,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    /* Green — the raw palette. Semantic tokens below map onto these per theme. */
-    --color-green-50: hsl(152, 48%, 96%);
-    --color-green-100: hsl(152, 46%, 90%);
-    --color-green-200: hsl(152, 42%, 80%);
-    --color-green-400: hsl(152, 52%, 47%);
-    --color-green-500: hsl(152, 60%, 40%);
-    --color-green-600: hsl(152, 64%, 32%);
-    --color-green-700: hsl(152, 68%, 24%);
-    --color-green-800: hsl(152, 64%, 15%);
-    --color-green-900: hsl(152, 45%, 9%);
-    --color-green-950: hsl(152, 45%, 4%);
+    /* Green — the raw palette. "Hacker mode": neon terminal green. Hue drifts
+       from electric spring-green in the brights to a deep forest-black in the
+       darks. Semantic tokens below map onto these per theme. */
+    --color-green-50: hsl(140, 60%, 96%);
+    --color-green-100: hsl(141, 62%, 88%);
+    --color-green-200: hsl(141, 55%, 70%);
+    --color-green-400: hsl(142, 88%, 52%);
+    --color-green-500: hsl(142, 100%, 45%);
+    --color-green-600: hsl(143, 92%, 37%);
+    --color-green-700: hsl(144, 82%, 27%);
+    --color-green-800: hsl(145, 72%, 15%);
+    --color-green-900: hsl(146, 62%, 7.5%);
+    --color-green-950: hsl(147, 60%, 3.5%);
 
     /* Error */
     --color-error-100: hsl(350, 80%, 95%);
@@ -357,7 +359,7 @@ h6 {
     }
 
     pre {
-        @apply rounded-2 bg-fill-raised text-ink;
+        @apply rounded-2 border border-brand/25 bg-fill-raised text-ink;
     }
 
     div[data-oembed] {

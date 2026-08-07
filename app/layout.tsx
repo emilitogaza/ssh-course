@@ -20,11 +20,10 @@ const SITE_TITLE = "Port 22 — how SSH, servers, and keys actually work";
 const SITE_DESCRIPTION =
   "A plain-English course on SSH: how clients, servers, and key pairs actually fit together, how to get access to a machine, how to run and secure your own, and how to fix it when it breaks. For people who can code a little but never quite got SSH.";
 
-
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "hsl(152, 48%, 96%)" },
-    { media: "(prefers-color-scheme: dark)", color: "hsl(152, 45%, 4%)" },
+    { media: "(prefers-color-scheme: light)", color: "hsl(140, 60%, 96%)" },
+    { media: "(prefers-color-scheme: dark)", color: "hsl(147, 60%, 3.5%)" },
   ],
 };
 
