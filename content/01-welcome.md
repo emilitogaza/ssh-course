@@ -51,12 +51,15 @@ happening, not enough to write your own.
   to decode them with `-v`
 - **The good stuff beyond basics** — tunnels, port forwarding, jump hosts, and
   why your `git push` quietly uses SSH the whole time
+- **Our actual hosting stack** — how Coolify, Docker, and Traefik fit together on
+  a server you SSH into, and how to deploy and debug client sites on it
 
 ## How this course is organised
 
 The **sidebar on the left** groups chapters into sections — Getting Started, How
 SSH Works, Keys & Authentication, Getting Access & Connecting, Running Your Own
-Server, and Going Further. Use **Previous / Next** at the bottom of each page to
+Server, Going Further, and Our Hosting Stack — our specific Coolify / Docker /
+Traefik setup. Use **Previous / Next** at the bottom of each page to
 read in order, and the **"On this page"** rail on the right to jump between
 sections of a chapter. On a phone, the **tray at the bottom** shows where you are
 and opens the full chapter list.
