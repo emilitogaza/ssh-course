@@ -1,0 +1,473 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode: `dark:` utilities apply under a `.dark` root. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* Green — the raw palette. Semantic tokens below map onto these per theme. */
+    --color-green-50: hsl(152, 48%, 96%);
+    --color-green-100: hsl(152, 46%, 90%);
+    --color-green-200: hsl(152, 42%, 80%);
+    --color-green-400: hsl(152, 52%, 47%);
+    --color-green-500: hsl(152, 60%, 40%);
+    --color-green-600: hsl(152, 64%, 32%);
+    --color-green-700: hsl(152, 68%, 24%);
+    --color-green-800: hsl(152, 64%, 15%);
+    --color-green-900: hsl(152, 45%, 9%);
+    --color-green-950: hsl(152, 45%, 4%);
+
+    /* Error */
+    --color-error-100: hsl(350, 80%, 95%);
+    --color-error-500: hsl(355, 90%, 55%);
+    --color-error-900: hsl(350, 80%, 10%);
+
+    --radius-0: 0rem;
+    --radius-1: 0.25rem; /* 4px  */
+    --radius-1_5: 0.375rem; /* 6px  */
+    --radius-2: 0.5rem; /* 8px  */
+    --radius-3: 0.75rem; /* 12px */
+    --radius-4: 1rem; /* 16px */
+    --radius-5: 1.25rem; /* 20px */
+    --radius-6: 1.5rem; /* 24px */
+    --radius-7: 1.75rem; /* 28px */
+    --radius-8: 2rem; /* 32px */
+    --radius-9: 2.25rem; /* 36px */
+    --radius-10: 2.5rem; /* 40px */
+    --radius-11: 2.75rem; /* 44px */
+    --radius-12: 3rem; /* 48px */
+    --radius-13: 3.25rem; /* 52px */
+    --radius-14: 3.5rem; /* 56px */
+    --radius-15: 3.75rem; /* 60px */
+    --radius-16: 4rem; /* 64px */
+    --radius-full: 9999px; /* infinite */
+
+    /* Fonts */
+    --font-primary: var(--font-mona-sans);
+    --font-secondary: var(--font-mona-sans);
+
+    /* Font size */
+    --text-8xl: 5.8rem;
+    --text-9xl: 6.2rem;
+    --text-10xl: 10rem;
+    --text-11xl: 11rem;
+    --text-12xl: 12rem;
+
+    --breakpoint-xxs: 22rem;
+    --breakpoint-xs: 24rem;
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 96rem;
+    --breakpoint-3xl: 128rem;
+
+    --stroke-width: 1.8;
+    --default-border-width: var(--stroke-width);
+
+    --animate-wiggle-grow: wiggle-grow 500ms cubic-bezier(0.34, 1.56, 0.64, 1)
+        both;
+
+    --animate-marquee-x-fast: marquee-x 90s linear infinite;
+    --animate-marquee-x-medium: marquee-x 180s linear infinite;
+    --animate-marquee-x-slow: marquee-x 320s linear infinite;
+
+    --animate-marquee-y-fast: marquee-y 90s linear infinite;
+    --animate-marquee-y-medium: marquee-y 180s linear infinite;
+    --animate-marquee-y-slow: marquee-y 320s linear infinite;
+
+    --animate-fade-up: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    --animate-fade-in: fade-in 300ms ease-out both;
+}
+
+/* Semantic color tokens resolve through these `--sem-*` runtime variables so a
+   `.dark` root can swap the whole palette. `@theme inline` inlines each value
+   into its utility (e.g. `bg-fill` → `var(--sem-fill)`), which is what lets the
+   `.dark` override win at the element instead of freezing at `:root`. */
+@theme inline {
+    /* Base */
+    --color-ink: var(--sem-ink);
+    --color-ink-dim: var(--sem-ink-dim);
+    --color-ink-flip: var(--sem-ink-flip);
+    --color-fill: var(--sem-fill);
+    --color-fill-raised: var(--sem-fill-raised);
+    --color-fill-dark: var(--sem-fill-dark);
+
+    /* Brand */
+    --color-brand-ink: var(--sem-brand-ink);
+    --color-brand-ink-flip: var(--sem-brand-ink-flip);
+    --color-brand: var(--sem-brand);
+    --color-brand-fill: var(--sem-brand-fill);
+
+    /* Misc */
+    --color-border: var(--sem-border);
+    --color-link: var(--sem-link);
+    --color-error-ink: var(--sem-error-ink);
+    --color-error: var(--sem-error);
+    --color-error-fill: var(--sem-error-fill);
+}
+
+/* Light theme (default) */
+:root {
+    color-scheme: light;
+
+    --sem-ink: var(--color-green-900);
+    --sem-ink-dim: var(--color-green-800);
+    --sem-ink-flip: var(--color-green-50);
+    --sem-fill: var(--color-green-50);
+    --sem-fill-raised: var(--color-green-100);
+    --sem-fill-dark: var(--color-green-900);
+
+    --sem-brand-ink: var(--color-green-900);
+    --sem-brand-ink-flip: var(--color-green-50);
+    --sem-brand: var(--color-green-500);
+    --sem-brand-fill: var(--color-green-900);
+
+    --sem-border: var(--color-green-200);
+    --sem-link: var(--color-green-600);
+    --sem-error-ink: var(--color-error-500);
+    --sem-error: var(--color-error-500);
+    --sem-error-fill: var(--color-error-900);
+
+    /* Scrollbar thumb, tuned per theme */
+    --scrollbar: var(--color-green-200);
+    --scrollbar-hover: var(--color-green-400);
+}
+
+/* Dark theme */
+.dark {
+    color-scheme: dark;
+
+    --sem-ink: var(--color-green-50);
+    --sem-ink-dim: var(--color-green-200);
+    /* Text on brand/error surfaces stays light — those surfaces are mid greens
+       in both themes, so this does not flip with the rest of the palette. */
+    --sem-ink-flip: var(--color-green-50);
+    --sem-fill: var(--color-green-950);
+    --sem-fill-raised: var(--color-green-900);
+    --sem-fill-dark: var(--color-green-950);
+
+    --sem-brand-ink: var(--color-green-50);
+    --sem-brand-ink-flip: var(--color-green-900);
+    --sem-brand: var(--color-green-500);
+    --sem-brand-fill: var(--color-green-100);
+
+    --sem-border: var(--color-green-800);
+    --sem-link: var(--color-green-400);
+    --sem-error-ink: var(--color-error-500);
+    --sem-error: var(--color-error-500);
+    --sem-error-fill: var(--color-error-900);
+
+    --scrollbar: var(--color-green-800);
+    --scrollbar-hover: var(--color-green-700);
+}
+
+/* Base styles */
+html {
+    scroll-behavior: smooth;
+    @apply bg-fill;
+}
+
+/* Custom scrollbar — themed thumb on a transparent track, like nextjs.org.
+   Modern Chrome/Firefox use the standard properties; the -webkit rules cover
+   Safari, where the standard properties aren't supported yet. */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-hover);
+}
+
+body {
+    @apply font-[550] font-stretch-110% tracking-wide bg-fill text-ink;
+    font-family: var(--font-secondary), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary), sans-serif;
+}
+
+/* Prose Styles */
+.prose {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply mt-0 mb-4 tracking-tight lg:mb-6 text-ink break-words;
+        font-family: var(--font-primary), sans-serif;
+    }
+}
+
+.prose.prose-accent {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-ink;
+    }
+}
+
+.prose.prose-ember {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-ink-flip;
+    }
+}
+
+.prose.prose-verdant {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-brand-ink-flip;
+    }
+}
+
+.prose {
+    h1 {
+        @apply mb-4 text-4xl leading-[1.1] font-[520] font-stretch-120% md:text-5xl;
+        &:not(:first-child) {
+            @apply mt-12;
+        }
+    }
+
+    h2 {
+        @apply mb-2 text-3xl leading-[1.12] font-[530] font-stretch-120% md:text-4xl;
+        &:not(:first-child) {
+            @apply mt-10;
+        }
+    }
+
+    h3 {
+        @apply mb-2 text-2xl leading-[1.14] font-[535] font-stretch-120% md:text-3xl;
+        &:not(:first-child) {
+            @apply mt-8;
+        }
+    }
+
+    h4 {
+        @apply mb-2 text-xl leading-[1.16] font-[540] font-stretch-120% md:text-2xl;
+        &:not(:first-child) {
+            @apply mt-6;
+        }
+    }
+
+    h5 {
+        @apply mb-2 text-lg leading-[1.18] font-[545] font-stretch-120% md:text-xl;
+        &:not(:first-child) {
+            @apply mt-4;
+        }
+    }
+
+    h6 {
+        @apply mb-2 text-base leading-[1.2] font-[550] font-stretch-120% md:text-lg;
+        &:not(:first-child) {
+            @apply mt-2;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        strong {
+            font-weight: inherit;
+        }
+    }
+
+    p {
+        @apply mt-0 leading-[1.4];
+        &:not(:last-child) {
+            @apply mb-3;
+        }
+    }
+
+    strong,
+    p strong {
+        @apply font-bold;
+    }
+
+    ul {
+        @apply my-2 list-disc pl-8 leading-[1.4] md:pl-12;
+        &:last-child {
+            @apply mb-4;
+        }
+    }
+
+    ol {
+        @apply my-2 list-decimal pl-8 leading-[1.4] md:pl-12;
+        &:last-child {
+            @apply mb-4;
+        }
+    }
+
+    li {
+        @apply my-0.5 leading-[1.4];
+        &:not(:last-child) {
+            @apply mb-2;
+        }
+    }
+
+    blockquote {
+        @apply my-6 rounded-3 bg-fill-raised p-4 italic leading-[1.4] text-ink/80;
+    }
+
+    a {
+        @apply font-semibold leading-[1.4] text-link underline-offset-3 text-pretty decoration-2 decoration-link/40 hover:decoration-link transition-colors hover:underline;
+    }
+
+    img {
+        @apply rounded-4 first:mt-0 md:rounded-5;
+        &:not(.not-prose) {
+            @apply mt-8 mb-8 overflow-hidden md:mt-12 md:mb-10;
+        }
+    }
+
+    pre {
+        @apply rounded-2 bg-fill-raised text-ink;
+    }
+
+    div[data-oembed] {
+        @apply mt-8 mb-8 overflow-hidden rounded-4 md:mt-12 md:mb-10 md:rounded-5;
+        aspect-ratio: 16 / 9;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* Override prose font sizes when used inline */
+.prose.prose-inherit-size {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-size: inherit;
+    }
+}
+
+/* Animations */
+@keyframes wiggle-grow {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    30% {
+        transform: rotate(8deg) scale(1.08);
+    }
+    50% {
+        transform: rotate(-6deg) scale(1.03);
+    }
+    70% {
+        transform: rotate(4deg) scale(1.01);
+    }
+    85% {
+        transform: rotate(-2deg) scale(1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes marquee-x {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-y {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: none;
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* Lucide icons */
+/* Non-scaling stroke so icons stay same thickness at any size */
+.lucide,
+.lucide * {
+    vector-effect: non-scaling-stroke;
+    stroke-width: var(--stroke-width);
+}
+
+/* Bold variant, same non-scaling behaviour, but a thikker boy */
+svg.icon-bold,
+svg.icon-bold * {
+    vector-effect: non-scaling-stroke !important;
+    stroke-width: 2.5 !important;
+}

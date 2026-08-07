@@ -1,0 +1,49 @@
+{
+  "name": "Port 22 — how SSH, servers, and keys actually work",
+  "short_name": "Port 22",
+  "description": "A plain-English course on SSH — how clients, servers, and key pairs fit together, how to get access to a machine, and how to run and secure your own.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "hsl(152, 45%, 4%)",
+  "theme_color": "hsl(152, 45%, 4%)",
+  "orientation": "portrait",
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  "dir": "ltr",
+  "lang": "en",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
