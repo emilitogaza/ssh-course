@@ -4,9 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    /* Green — the raw palette. "Hacker mode": neon terminal green. Hue drifts
-       from electric spring-green in the brights to a deep forest-black in the
-       darks. Semantic tokens below map onto these per theme. */
+    /* Green — the brand ramp. Semantic tokens below map onto these per theme. */
     --color-green-50: hsl(140, 60%, 96%);
     --color-green-100: hsl(141, 62%, 88%);
     --color-green-200: hsl(141, 55%, 70%);
@@ -81,10 +79,7 @@
     --animate-fade-in: fade-in 300ms ease-out both;
 }
 
-/* Semantic color tokens resolve through these `--sem-*` runtime variables so a
-   `.dark` root can swap the whole palette. `@theme inline` inlines each value
-   into its utility (e.g. `bg-fill` → `var(--sem-fill)`), which is what lets the
-   `.dark` override win at the element instead of freezing at `:root`. */
+/* Semantic tokens — resolved through `--sem-*` so `.dark` can swap the palette. */
 @theme inline {
     /* Base */
     --color-ink: var(--sem-ink);
