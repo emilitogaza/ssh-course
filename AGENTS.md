@@ -42,3 +42,27 @@ All UI components are built from scratch using React and Tailwind.
 # This site is hosted on Vercel
 This project is hosted on Vercel. When talking about hosting, refer to Vercel.
 <!-- END:hosting-rules -->
+
+<!-- BEGIN:theming-rules -->
+## Theming quick rules
+
+- **One ramp, ten stops.** All colours come from the ten `--color-green-*`
+  values at the top of `app/globals.css` (+ the two `themeColor` literals in
+  `app/layout.tsx` and the two colours in `app/manifest.webmanifest`).
+  Re-theming = swap those ten values.
+- **The ramp is named after its colour** (green here). If you rename it,
+  update every `var(--color-…)` reference in the `--sem-*` blocks (light
+  theme, dark theme, scrollbar) to match. Components never touch the ramp
+  directly — they use semantic utilities (`bg-fill`, `text-ink`,
+  `text-brand`, …) resolved through `--sem-*` runtime variables, which is
+  what lets `.dark` swap the whole palette at once.
+- **Keep `globals.css` comment-light.** Theming documentation lives here, not
+  as comment essays inside the CSS.
+- **Check primary-button contrast after re-theming.** The default Button
+  variant is `bg-brand` and `brand-ink` text is *dark* in light mode — that
+  only works on bright brand colours. If the ramp's `-500` stop is dark
+  (rough guide: HSL lightness under ~55%), the default variant's text must be
+  `text-ink-flip` in `components/button.tsx` so the label reads
+  light-on-dark. Eyeball the primary button in **both** themes after any
+  ramp change.
+<!-- END:theming-rules -->
