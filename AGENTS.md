@@ -63,6 +63,8 @@ This project is hosted on Vercel. When talking about hosting, refer to Vercel.
   only works on bright brand colours. If the ramp's `-500` stop is dark
   (rough guide: HSL lightness under ~55%), the default variant's text must be
   `text-ink-flip` in `components/button.tsx` so the label reads
-  light-on-dark. Eyeball the primary button in **both** themes after any
+  light-on-dark; on a very bright/neon `-500`, use `text-fill-dark` so it
+  stays dark in both themes. This site uses `text-fill-dark` — its neon
+  green-500 needs a dark label in both themes. Eyeball the primary button in **both** themes after any
   ramp change.
 <!-- END:theming-rules -->

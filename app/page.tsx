@@ -39,6 +39,11 @@ const OTHER_COURSES = [
     href: "https://fran-jord-till-bord.vercel.app",
     description: "How farming works in Sweden — from soil to table.",
   },
+  {
+    title: "Watt's Up",
+    href: "https://watts-up.vercel.app",
+    description: "How electricity actually works — from electrons to the grid.",
+  },
 ];
 
 export default function Home() {
