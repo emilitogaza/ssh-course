@@ -47,7 +47,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait">
       <m.div
         key={segment}
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}

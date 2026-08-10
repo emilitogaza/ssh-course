@@ -67,4 +67,12 @@ This project is hosted on Vercel. When talking about hosting, refer to Vercel.
   stays dark in both themes. This site uses `text-fill-dark` — its neon
   green-500 needs a dark label in both themes. Eyeball the primary button in **both** themes after any
   ramp change.
+- **Every re-theme must leave the site installable as a PWA.** That means
+  regenerating the complete icon set — `app/icon.svg`, the four
+  `public/icons/*.png`, `app/favicon.ico`, **and `app/apple-icon.png`**
+  (iOS home-screen installs ignore the manifest and need it) — and updating
+  `app/manifest.webmanifest`'s `name`, `short_name`, `description` and both
+  colours. Sanity-check that the manifest is valid JSON afterwards; Chrome
+  silently ignores an invalid manifest and installs a nameless, iconless
+  shortcut.
 <!-- END:theming-rules -->
