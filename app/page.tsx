@@ -44,6 +44,11 @@ const OTHER_COURSES = [
     href: "https://watts-up.vercel.app",
     description: "How electricity actually works — from electrons to the grid.",
   },
+  {
+    title: "Nuts & Bolts",
+    href: "https://nuts-and-bolts.vercel.app",
+    description: "Torque, bolts, metals and machines — mechanical fundamentals.",
+  },
 ];
 
 export default function Home() {
