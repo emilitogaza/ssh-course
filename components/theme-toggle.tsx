@@ -37,8 +37,8 @@ export function ThemeToggle({ className }: { className?: string }) {
         className
       )}
     >
-      <Sun className="size-5 dark:hidden" />
-      <Moon className="hidden size-5 dark:block" />
+      <Sun className="icon-5 dark:hidden" />
+      <Moon className="hidden icon-5 dark:block" />
     </button>
   );
 }

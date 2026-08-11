@@ -77,17 +77,14 @@ export default function Home() {
           Pure accent-token colours, so it re-themes with the ramp. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-brand/15 blur-3xl" />
-        <SquareTerminal
-          className="absolute -right-24 top-24 size-96 rotate-12 text-brand/[0.07]"
-          strokeWidth={1}
-        />
+        <SquareTerminal className="absolute -right-24 top-24 icon-96 rotate-12 text-brand/[0.07]" />
       </div>
 
       {/* Minimal header — the course shell (sidebar, tray) starts on the
           chapter pages; the landing page only needs the wordmark + theme. */}
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <span className="flex items-center gap-2 text-base font-semibold text-brand-ink">
-          <SquareTerminal className="size-5 text-brand" />
+          <SquareTerminal className="icon-5 text-brand" />
           {WORDMARK}
         </span>
         <ThemeToggle />
@@ -135,7 +132,7 @@ export default function Home() {
         >
           {stats.map(({ icon: Icon, label }) => (
             <li key={label} className="flex items-center gap-2 text-sm text-ink/60">
-              <Icon className="size-4 text-brand" />
+              <Icon className="icon-4 text-brand" />
               {label}
             </li>
           ))}
@@ -174,7 +171,7 @@ export default function Home() {
                       <span className="flex min-w-0 flex-col gap-1">
                         <span className="flex items-center gap-2 font-semibold text-brand-ink">
                           {chapter.title}
-                          <ArrowRight className="size-4 shrink-0 -translate-x-1 text-brand opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                          <ArrowRight className="icon-4 shrink-0 -translate-x-1 text-brand opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                         </span>
                         {chapter.description && (
                           <span className="text-sm leading-snug text-ink/60">
@@ -209,7 +206,7 @@ export default function Home() {
               >
                 <span className="flex items-center gap-2 font-semibold text-brand-ink">
                   {course.title}
-                  <ArrowUpRight className="size-4 shrink-0 -translate-x-1 translate-y-1 text-brand opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
+                  <ArrowUpRight className="icon-4 shrink-0 -translate-x-1 translate-y-1 text-brand opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                 </span>
                 <span className="text-sm leading-snug text-ink/60">
                   {course.description}

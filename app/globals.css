@@ -455,16 +455,22 @@ h6 {
 }
 
 /* Lucide icons */
-/* Non-scaling stroke so icons stay same thickness at any size */
-.lucide,
-.lucide * {
-    vector-effect: non-scaling-stroke;
-    stroke-width: var(--stroke-width);
+/* icon-N sizes like size-N and compensates stroke-width so it renders at
+   --stroke-width px at any icon size (24 viewBox units / 4px spacing = 6) */
+@utility icon-* {
+    width: calc(var(--spacing) * --value(number));
+    height: calc(var(--spacing) * --value(number));
+    stroke-width: calc(var(--stroke-width) * 6 / --value(number));
 }
 
-/* Bold variant, same non-scaling behaviour, but a thikker boy */
-svg.icon-bold,
-svg.icon-bold * {
-    vector-effect: non-scaling-stroke !important;
-    stroke-width: 2.5 !important;
+/* Bold variant, still a thikker boy: compose as "icon-5 icon-bold" */
+@utility icon-bold {
+    --stroke-width: 2.5;
+}
+
+/* Fallback for icons without icon-*: exact at natural 24px size */
+@layer base {
+    .lucide {
+        stroke-width: var(--stroke-width);
+    }
 }

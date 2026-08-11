@@ -15,11 +15,11 @@ const variantClasses = {
 
 const sizeClasses = {
   default:
-    "h-14 gap-1 px-6 [&>svg:first-child]:-ml-0.5 [&>svg:last-child]:-mr-0.5 [&_svg:not([class*='size-'])]:size-5",
-  sm: "h-12 px-5 [&_svg:not([class*='size-'])]:size-4",
-  lg: "h-16 gap-1.5 px-7 [&>svg:first-child]:-ml-1 [&>svg:last-child]:-mr-1 [&_svg:not([class*='size-'])]:size-5",
-  icon: "size-12 px-0 [&_svg:not([class*='size-'])]:size-5",
-  link: "h-auto px-0 py-4 [&_svg:not([class*='size-'])]:size-5",
+    "h-14 gap-1 px-6 [&>svg:first-child]:-ml-0.5 [&>svg:last-child]:-mr-0.5 [&_svg:not([class*='size-']):not([class*='icon-'])]:icon-5",
+  sm: "h-12 px-5 [&_svg:not([class*='size-']):not([class*='icon-'])]:icon-4",
+  lg: "h-16 gap-1.5 px-7 [&>svg:first-child]:-ml-1 [&>svg:last-child]:-mr-1 [&_svg:not([class*='size-']):not([class*='icon-'])]:icon-5",
+  icon: "size-12 px-0 [&_svg:not([class*='size-']):not([class*='icon-'])]:icon-5",
+  link: "h-auto px-0 py-4 [&_svg:not([class*='size-']):not([class*='icon-'])]:icon-5",
 } as const;
 
 const baseClasses =

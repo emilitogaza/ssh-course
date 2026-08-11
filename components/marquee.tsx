@@ -64,7 +64,7 @@ export function Marquee({ items }: { items: string[] }) {
                 key={`${title}-${i}`}
                 className="flex items-center whitespace-nowrap text-sm font-semibold uppercase tracking-wider text-ink/40"
               >
-                <Sparkle className="mx-6 size-3.5 text-brand/60" />
+                <Sparkle className="mx-6 icon-3.5 text-brand/60" />
                 {title}
               </li>
             ))}

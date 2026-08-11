@@ -23,7 +23,7 @@ export function Pager({
           className="group flex flex-col gap-1 rounded-3 bg-fill-raised p-4 transition-colors hover:bg-brand/10"
         >
           <span className="flex items-center gap-1 text-xs font-semibold uppercase text-ink/50">
-            <ArrowLeft className="size-4" /> Previous
+            <ArrowLeft className="icon-4" /> Previous
           </span>
           <span className="font-semibold text-brand-ink">{prev.title}</span>
         </Link>
@@ -38,7 +38,7 @@ export function Pager({
           className="group flex flex-col items-end gap-1 rounded-3 bg-fill-raised p-4 text-right transition-colors hover:bg-brand/10 sm:col-start-2"
         >
           <span className="flex items-center gap-1 text-xs font-semibold uppercase text-ink/50">
-            Next <ArrowRight className="size-4" />
+            Next <ArrowRight className="icon-4" />
           </span>
           <span className="font-semibold text-brand-ink">{next.title}</span>
         </Link>

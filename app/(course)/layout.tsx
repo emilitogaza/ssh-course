@@ -21,7 +21,7 @@ export default function CourseLayout({ children }: { children: React.ReactNode }
             href="/"
             className="flex items-center gap-2 text-base font-semibold text-brand-ink"
           >
-            <SquareTerminal className="size-5 text-brand" />
+            <SquareTerminal className="icon-5 text-brand" />
             Port 22
           </Link>
           <ThemeToggle />
