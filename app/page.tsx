@@ -49,6 +49,11 @@ const OTHER_COURSES = [
     href: "https://nuts-and-bolts-sigma.vercel.app",
     description: "Torque, bolts, metals and machines — mechanical fundamentals.",
   },
+  {
+    title: "Glass Act",
+    href: "https://emhart-glass.vercel.app",
+    description: "The Emhart Glass story — bottle machines, history and fun facts.",
+  },
 ];
 
 export default function Home() {
